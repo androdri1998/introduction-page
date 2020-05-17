@@ -8,7 +8,7 @@ function HomeRender({ repositories, profile }) {
   return (
     <ContainerHome>
       <Profile profile={profile} />
-      <Repositories repositories={repositories} />
+      {/* <Repositories repositories={repositories} /> */}
     </ContainerHome>
   );
 }
