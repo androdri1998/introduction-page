@@ -1,5 +1,5 @@
 import { githubApi } from "../../utils/api";
-import configProfile from "../../../config.profile";
+import { getExperiences } from "../../utils/gets";
 
 const userActions = {
   GET_EXPERIENCES: "@user/GET_EXPERIENCES",
@@ -11,10 +11,7 @@ const INITIAL_STATE = {
   experiences: null,
 };
 
-export const userReducer = (
-  state = INITIAL_STATE,
-  { type, payload }
-) => {
+export const userReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case userActions.GET_PROFILE:
       return {
@@ -31,10 +28,10 @@ export const userReducer = (
   }
 };
 
-export const getExperiences = async () => {
+export const getExperiencesUser = async () => {
   return {
     type: userActions.GET_EXPERIENCES,
-    payload: configProfile.experiences,
+    payload: getExperiences(),
   };
 };
 

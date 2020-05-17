@@ -1,6 +1,7 @@
 const user = {
   username: "USERNAME GITHUB",
-  name: "WRITE A NAME",
+  name: "NAME",
+  photo: "LINK TO PHOTO",
   decription: "WRITE A DESCRIPTION",
   experiences: [
     {
@@ -9,7 +10,7 @@ const user = {
       ends_at: "DATE OF THE FINISHED AT IN JOB",
       description: "DESCRIPTION ABOUT EXPERIENCE",
     },
-  ]
+  ],
 };
 
 export default user;

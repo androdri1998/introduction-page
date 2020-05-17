@@ -1,0 +1,38 @@
+import styled from "styled-components";
+
+export const ContainerRepositories = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ItemExperience = styled.article`
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+`;
+
+export const Name = styled.p`
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+`;
+
+export const TitleDescriptionExperience = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  color: gray;
+  margin-top: 15px;
+  margin-bottom: 15px;
+`;
+
+export const Description = styled.p`
+  font-size: 16px;
+  color: white;
+  margin-bottom: ${(props) => props.marginBottom || "0"};
+`;
