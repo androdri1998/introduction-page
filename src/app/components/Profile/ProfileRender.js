@@ -20,11 +20,13 @@ export default function ProfileRender({ profile }) {
       {getDescription() && (
         <Description>
           {`${getDescription().substr(0, lengthDescription)}${
-            getDescription().length > 100 && !seeDescription ? "..." : null
+            getDescription().length > LENGTH_DESCRIPTION && !seeDescription
+              ? "..."
+              : ""
           }`}
         </Description>
       )}
-      {getDescription().length > 100 && (
+      {getDescription().length > LENGTH_DESCRIPTION && (
         <SeeMore
           onClick={() => {
             handleViewDrescription(seeDescription);

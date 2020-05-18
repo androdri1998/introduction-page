@@ -1,12 +1,9 @@
 import React, { useState, useMemo } from "react";
-import moment from "moment";
 import PropTypes from "prop-types";
+import ItemRepository from "../ItemRepository";
 import {
   ContainerRepositories,
   TitleDescriptionRepository,
-  Link,
-  ItemRepository,
-  Description,
   SeeMore,
   Observations,
 } from "./style";
@@ -22,6 +19,7 @@ export default function RepositoriesRender({ repositories }) {
   const handleViewRepositories = (current) => {
     setSeeMore(!current);
   };
+
   return (
     <ContainerRepositories>
       <TitleDescriptionRepository>
@@ -32,23 +30,7 @@ export default function RepositoriesRender({ repositories }) {
           .filter((item, index) => (index < lengthRepositories ? true : false))
           .map((repository, index) =>
             repository.name !== ".github" ? (
-              <ItemRepository key={index}>
-                <Link href={repository.html_url} target="_blank">
-                  {repository.name}
-                </Link>
-                {repository.description && (
-                  <Description marginBottom={"10px"}>
-                    {repository.description}
-                  </Description>
-                )}
-                {repository.language && (
-                  <Description>{repository.language}</Description>
-                )}
-                <Description>
-                  Updated at{" "}
-                  {moment(repository.updated_at).format("DD/MM/YYYY HH:mm")}
-                </Description>
-              </ItemRepository>
+              <ItemRepository repository={repository} key={index} />
             ) : null
           )
       ) : (

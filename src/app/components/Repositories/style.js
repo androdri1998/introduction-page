@@ -5,36 +5,12 @@ export const ContainerRepositories = styled.div`
   flex-direction: column;
 `;
 
-export const ItemRepository = styled.article`
-  background: rgba(255, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 20px;
-`;
-
-export const Link = styled.a`
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 10px;
-`;
-
 export const TitleDescriptionRepository = styled.p`
   font-size: 20px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.87);
   margin-top: 15px;
   margin-bottom: 15px;
-`;
-
-export const Description = styled.p`
-  font-size: 16px;
-  color: white;
-  margin-bottom: ${(props) => props.marginBottom || "0"};
 `;
 
 export const Line = styled.div`

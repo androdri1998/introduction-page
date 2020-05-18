@@ -3,25 +3,17 @@ import PropTypes from "prop-types";
 import Profile from "../../components/Profile";
 import Repositories from "../../components/Repositories";
 import Experiences from "../../components/Experiences";
+import Header from "../../components/Header";
 import { getPhoto, getName } from "../../utils/gets";
-import {
-  ContainerHome,
-  Image,
-  ContainerHeader,
-  ContaineBody,
-  TextName,
-} from "./style";
+import { ContainerHome, ContaineBody } from "./style";
 
 function HomeRender({ repositories, profile, experiences }) {
   return (
     <ContainerHome>
-      <ContainerHeader>
-        {getPhoto() ||
-          (profile && profile.avatar_url && (
-            <Image alt="profile" src={getPhoto() || profile.avatar_url} />
-          ))}
-        <TextName>{getName() || profile.name}</TextName>
-      </ContainerHeader>
+      <Header
+        photo={getPhoto() || profile.avatar_url}
+        name={getName() || profile.name}
+      />
       <ContaineBody>
         <Profile profile={profile} />
         <Experiences experiences={experiences} />

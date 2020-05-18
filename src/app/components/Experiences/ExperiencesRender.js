@@ -1,11 +1,9 @@
 import React, { useState, useMemo } from "react";
 import PropTypes from "prop-types";
+import ItemExperience from "../ItemExperience";
 import {
   ContainerRepositories,
   TitleDescriptionExperience,
-  Name,
-  ItemExperience,
-  Description,
   SeeMore,
   Observations,
 } from "./style";
@@ -22,6 +20,7 @@ export default function ExperiencesRender({ experiences }) {
   const handleViewExperiences = (current) => {
     setSeeMore(!current);
   };
+
   return (
     <ContainerRepositories>
       <TitleDescriptionExperience>
@@ -31,24 +30,7 @@ export default function ExperiencesRender({ experiences }) {
         experiences
           .filter((item, index) => (index < lengthExperiences ? true : false))
           .map((experience, index) => (
-            <ItemExperience key={index}>
-              <Name>{experience.company}</Name>
-              {experience.description && (
-                <Description marginBottom={"10px"}>
-                  {experience.description}
-                </Description>
-              )}
-              {experience.start_at && (
-                <Description>Entered into {experience.start_at}</Description>
-              )}
-              {
-                <Description>
-                  {experience.ends_at
-                    ? `Left in ${experience.ends_at}`
-                    : "Current"}
-                </Description>
-              }
-            </ItemExperience>
+            <ItemExperience key={index} experience={experience} />
           ))
       ) : (
         <Observations>Experiences is not availables</Observations>
