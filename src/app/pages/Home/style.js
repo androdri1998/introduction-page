@@ -13,7 +13,7 @@ export const ContaineBody = styled.div`
   flex: 1;
   flex-direction: column;
   border-radius: 30px 30px 0 0;
-  padding: 30px;
+  padding: 20px;
   overflow-y: auto;
 `;
 

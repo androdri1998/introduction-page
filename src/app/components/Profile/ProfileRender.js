@@ -1,12 +1,6 @@
 import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import {
-  ContainerProfile,
-  Image,
-  TextName,
-  Description,
-  SeeMore,
-} from "./style";
+import { ContainerProfile, Description, SeeMore } from "./style";
 import { getDescription } from "../../utils/gets";
 
 const LENGTH_DESCRIPTION = 100;
@@ -15,7 +9,7 @@ export default function ProfileRender({ profile }) {
   const [seeDescription, setSeeDescription] = useState(false);
   const lengthDescription = useMemo(() => {
     return !seeDescription ? LENGTH_DESCRIPTION : getDescription().length;
-  });
+  }, [seeDescription]);
 
   const handleViewDrescription = (stateSeeDescription) => {
     setSeeDescription(!stateSeeDescription);
@@ -36,7 +30,7 @@ export default function ProfileRender({ profile }) {
             handleViewDrescription(seeDescription);
           }}
         >
-          Touch to see {seeDescription ? "less" : "complete descrition"}
+          See {seeDescription ? "less" : "complete descrition"}
         </SeeMore>
       )}
     </ContainerProfile>

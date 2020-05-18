@@ -16,14 +16,17 @@ function HomeRender({ repositories, profile, experiences }) {
   return (
     <ContainerHome>
       <ContainerHeader>
-        {getPhoto() && <Image alt="profile" src={getPhoto()} />}
+        {getPhoto() ||
+          (profile && profile.avatar_url && (
+            <Image alt="profile" src={getPhoto() || profile.avatar_url} />
+          ))}
         <TextName>{getName() || profile.name}</TextName>
       </ContainerHeader>
       <ContaineBody>
         <Profile profile={profile} />
         <Experiences experiences={experiences} />
+        <Repositories repositories={repositories} />
       </ContaineBody>
-      {/* <Repositories repositories={repositories} /> */}
     </ContainerHome>
   );
 }

@@ -26,7 +26,7 @@ export const Name = styled.p`
 export const TitleDescriptionExperience = styled.p`
   font-size: 20px;
   font-weight: bold;
-  color: gray;
+  color: rgba(255, 255, 255, 0.87);
   margin-top: 15px;
   margin-bottom: 15px;
 `;
@@ -35,4 +35,17 @@ export const Description = styled.p`
   font-size: 16px;
   color: white;
   margin-bottom: ${(props) => props.marginBottom || "0"};
+`;
+
+export const SeeMore = styled.span`
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+`;
+
+export const Observations = styled.span`
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-self: center;
 `;
