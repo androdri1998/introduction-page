@@ -7,14 +7,16 @@ import {
   SeeMore,
   Observations,
 } from "./style";
+import useInnerWidth from "../../hooks/useInnerWidth";
 
 const LENGTH_REPOSITORIES = 2;
 
 export default function RepositoriesRender({ repositories }) {
+  const width = useInnerWidth();
   const [seeMore, setSeeMore] = useState(false);
   const lengthRepositories = useMemo(() => {
-    return seeMore ? repositories.length : LENGTH_REPOSITORIES;
-  }, [seeMore, repositories.length]);
+    return width > 520 || seeMore ? repositories.length : LENGTH_REPOSITORIES;
+  }, [seeMore, repositories.length, width]);
 
   const handleViewRepositories = (current) => {
     setSeeMore(!current);
@@ -36,7 +38,7 @@ export default function RepositoriesRender({ repositories }) {
       ) : (
         <Observations>Repositories is not availables</Observations>
       )}
-      {repositories.length > LENGTH_REPOSITORIES && (
+      {width <= 520 && repositories.length > LENGTH_REPOSITORIES && (
         <SeeMore
           onClick={() => {
             handleViewRepositories(seeMore);

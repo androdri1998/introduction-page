@@ -8,5 +8,5 @@ export default function Header({ name, photo }) {
 
 Header.propTypes = {
   name: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired,
+  photo: PropTypes.string,
 };

@@ -7,15 +7,17 @@ import {
   SeeMore,
   Observations,
 } from "./style";
+import useInnerWidth from "../../hooks/useInnerWidth";
 
 const LENGTH_EXPERIENCES = 1;
 
 export default function ExperiencesRender({ experiences }) {
+  const width = useInnerWidth();
   const [seeMore, setSeeMore] = useState(false);
 
   const lengthExperiences = useMemo(() => {
-    return seeMore ? experiences.length : LENGTH_EXPERIENCES;
-  }, [seeMore, experiences.length]);
+    return width > 520 || seeMore ? experiences.length : LENGTH_EXPERIENCES;
+  }, [seeMore, experiences.length, width]);
 
   const handleViewExperiences = (current) => {
     setSeeMore(!current);
@@ -35,7 +37,7 @@ export default function ExperiencesRender({ experiences }) {
       ) : (
         <Observations>Experiences is not availables</Observations>
       )}
-      {experiences.length > LENGTH_EXPERIENCES && (
+      {width <= 520 && experiences.length > LENGTH_EXPERIENCES && (
         <SeeMore
           onClick={() => {
             handleViewExperiences(seeMore);

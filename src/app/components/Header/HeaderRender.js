@@ -13,5 +13,5 @@ export default function HeaderRender({ name, photo }) {
 
 HeaderRender.propTypes = {
   name: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired,
+  photo: PropTypes.string,
 };
