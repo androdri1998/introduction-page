@@ -6,7 +6,6 @@ export const ItemExperience = styled.article`
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  margin-bottom: 15px;
   border-radius: 20px;
 `;
 

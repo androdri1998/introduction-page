@@ -5,6 +5,22 @@ export const ContainerRepositories = styled.div`
   flex-direction: column;
 `;
 
+export const ContainerGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  margin-bottom: 10px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 960px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+`;
+
 export const ItemExperience = styled.article`
   background: rgba(255, 255, 255, 0.3);
   display: flex;

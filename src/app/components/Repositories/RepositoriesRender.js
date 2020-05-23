@@ -6,16 +6,20 @@ import {
   TitleDescriptionRepository,
   SeeMore,
   Observations,
+  ContainerGrid,
 } from "./style";
 import useInnerWidth from "../../hooks/useInnerWidth";
 
 const LENGTH_REPOSITORIES = 2;
+const WIDTH_ONE_COLUMN = 768;
 
 export default function RepositoriesRender({ repositories }) {
   const width = useInnerWidth();
   const [seeMore, setSeeMore] = useState(false);
   const lengthRepositories = useMemo(() => {
-    return width > 520 || seeMore ? repositories.length : LENGTH_REPOSITORIES;
+    return width > WIDTH_ONE_COLUMN || seeMore
+      ? repositories.length
+      : LENGTH_REPOSITORIES;
   }, [seeMore, repositories.length, width]);
 
   const handleViewRepositories = (current) => {
@@ -27,18 +31,22 @@ export default function RepositoriesRender({ repositories }) {
       <TitleDescriptionRepository>
         {repositories.length} Repositories
       </TitleDescriptionRepository>
-      {repositories.length > 0 ? (
-        repositories
-          .filter((item, index) => (index < lengthRepositories ? true : false))
-          .map((repository, index) =>
-            repository.name !== ".github" ? (
-              <ItemRepository repository={repository} key={index} />
-            ) : null
-          )
-      ) : (
-        <Observations>Repositories is not availables</Observations>
-      )}
-      {width <= 520 && repositories.length > LENGTH_REPOSITORIES && (
+      <ContainerGrid>
+        {repositories.length > 0 ? (
+          repositories
+            .filter((item, index) =>
+              index < lengthRepositories ? true : false
+            )
+            .map((repository, index) =>
+              repository.name !== ".github" ? (
+                <ItemRepository repository={repository} key={index} />
+              ) : null
+            )
+        ) : (
+          <Observations>Repositories is not availables</Observations>
+        )}
+      </ContainerGrid>
+      {width <= WIDTH_ONE_COLUMN && repositories.length > LENGTH_REPOSITORIES && (
         <SeeMore
           onClick={() => {
             handleViewRepositories(seeMore);
