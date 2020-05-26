@@ -51,12 +51,12 @@ export default user;
 
 ### Run a local build
 
-Create a build of the application `yarn build`:
-`$ yarn build`
-Run a local server from build of the application `yarn serve -s build`:
-`$ yarn serve -s build`
-
-### Run page to development
-
-Run a application to development `yarn start`:
-`$ yarn start`
+Create a build of the application `yarn build`:  
+`$ yarn build`  
+Run a local server from build of the application `yarn serve -s build`:  
+`$ yarn serve -s build`  
+  
+### Run page to development  
+  
+Run a application to development `yarn start`:  
+`$ yarn start`  
