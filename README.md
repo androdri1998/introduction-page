@@ -6,9 +6,15 @@ This application was created to learning Front-end approach with ReactJS and Res
 The application has functionalities as show photo and name in header, show a description, list experiences and
 list repositories from Github using [Github Api](https://developer.github.com/v3/).
 
-## Layout
+## Layouts
+
+#### Desktop layout
 ![Desktop](/layout/desktop_screen.png)
+
+#### Medium screen layout
 ![Medium Screen](/layout/medium_screen.png)
+
+#### Mobile layout
 ![mobile](/layout/mobile_screen.png)
 
 ## Techonologies useds
