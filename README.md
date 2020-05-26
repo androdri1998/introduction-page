@@ -1,5 +1,5 @@
 # introduction-page  
-**This is only a study application for learning Front-end with Javascript Technologies**  
+**This is only a study application for learning Front-end with Javascript Technologies and is not recommend to use in production environment**  
 
 ## Description
 This application was created to learning Front-end approach with ReactJS and Responsive layouts with css grid.  
