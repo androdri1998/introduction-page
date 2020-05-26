@@ -18,7 +18,7 @@ function Home() {
   const experiencesReducer = useSelector(
     (state) => state.userReducer.experiences
   );
-  const [username] = useState(getUsername || "camunda");
+  const [username] = useState(getUsername());
 
   useEffect(() => {
     const fetchRepos = async () => {
